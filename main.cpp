@@ -3,140 +3,170 @@
 int main(){
     playmusic("intro.wav", SND_ASYNC);
 
-  initscr();
-  noecho();
-  cbreak();
+    initscr();
+    noecho();
+    cbreak();
 
-  introframe();
-  
-  napms(2000);
-  
-  stopmusic();
-  
-  clear();
-  refresh();
+    introframe();
+    
+    napms(2000);
+    
+    stopmusic();
+    
+    clear();
+    refresh();
 
-  napms(2000);
-  
-  playmusic("chapter.wav", SND_ASYNC);
+    boxMenu();
+    noecho();
+    curs_set(0);
+    cbreak();
+    int ch = getch();
+    mvprintw(13,57,"");
+    switch (ch)
+    {
+    case '1':
+        clearScreen();
+        echo();
+        curs_set(1);
+        nocbreak();
+        singIn();
+        break;
+    case '2':
+        clearScreen();
+        echo();
+        curs_set(1);
+        nocbreak();
+        singUp();
+        singIn();
+        break;
+    case '3':
+        return 0;
+        break;
+    default:
+        break;
+    }
 
-  dialog001();
-  refresh();
-  
-  clear();
-  refresh();
+    napms(2000);
+    
+    playmusic("chapter.wav", SND_ASYNC);
 
-  stopmusic();
+    dialog001();
+    refresh();
+    
+    clear();
+    refresh();
 
-  napms(2000);
-  
-  playmusic("peaceful.wav");
+    stopmusic();
 
-  dialog002();
-  refresh();
+    napms(2000);
+    
+    playmusic("peaceful.wav");
 
-  dialog003();
-  refresh();
+    dialog002();
+    refresh();
 
-  dialog004();
-  refresh();
+    dialog003();
+    refresh();
 
-  dialog005();
-  refresh();
+    dialog004();
+    refresh();
 
-  stopmusic();
-  
-  napms(2000);
-  
-  playmusic("danger.wav");
+    dialog005();
+    refresh();
 
-  dialog006();
-  refresh();
-  
-  battlemodifierA = 'A';
-  battlemodifierB = 'Q';
-  
-  while(specialtracker2==1) {
+    stopmusic();
+    
+    napms(2000);
+    
+    playmusic("danger.wav");
 
-  dialog007();
-  refresh();
+    dialog006();
+    refresh();
+    
+    battlemodifierA = 'A';
+    battlemodifierB = 'Q';
+    
+    while(specialtracker2==1) {
 
-  stopmusic();
-  
-  napms(2000);
-  
-  playmusic("battle.wav");
-  
-  battlesystem();
-  checkbattle();
+    dialog007();
+    refresh();
 
-  if (specialtracker2==1) {
-  stopmusic();
-  playmusic("danger.wav");
-  }
-  else {
-  	stopmusic();
-  }
-  };
-  
-  napms(2000);
-  
-  playmusic("great.wav");
-  
-  dialog008();
-  refresh();
+    stopmusic();
+    
+    napms(2000);
+    
+    playmusic("battle.wav");
+    
+    battlesystem();
+    checkbattle();
 
-  stopmusic();
-  
-  dialog009();
-  refresh();
-  
-  playmusic("unpleasant.wav");
-  
-  dialog010();
-  refresh();
+    if (specialtracker2==1) {
+    stopmusic();
+    playmusic("danger.wav");
+    }
+    else {
+        stopmusic();
+    }
+    };
+    
+    napms(2000);
+    
+    playmusic("great.wav");
+    
+    dialog008();
+    refresh();
 
-  stopmusic();
-  
-  clear();
-  refresh();
+    stopmusic();
+    
+    dialog009();
+    refresh();
+    
+    playmusic("unpleasant.wav");
+    
+    dialog010();
+    refresh();
 
-  napms(2000);
-  
-  playmusic("chapter.wav", SND_ASYNC);
-  
-  dialog011();
-  refresh();
-  
-  clear();
-  refresh();
-  
-  stopmusic();
+    stopmusic();
+    
+    clear();
+    refresh();
 
-  napms(2000);
-  
-  playmusic("journey.wav");
-  
-  dialog012();
-  refresh();
-  
-  stopmusic();
-  
-  napms(2000);
-  
-  playmusic("sorrow.wav");
-  
-  dialog013();
-  refresh();
+    napms(2000);
+    
+    playmusic("chapter.wav", SND_ASYNC);
+    
+    dialog011();
+    refresh();
+    
+    clear();
+    refresh();
+    
+    stopmusic();
 
-  endwin();
+    napms(2000);
+    
+    playmusic("journey.wav");
+    
+    dialog012();
+    refresh();
+    
+    stopmusic();
+    
+    napms(2000);
+    
+    playmusic("sorrow.wav");
+    
+    dialog013();
+    refresh();
 
-  stopmusic();
+    endwin();
 
-  while (true) {
-    Sleep(100);
-    break;
-  }
+    stopmusic();
 
-  return 0;
+    while (true) {
+        Sleep(100);
+        break;
+    }
+
+    return 0;
 }
