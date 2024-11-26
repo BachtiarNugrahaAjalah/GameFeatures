@@ -1,4 +1,10 @@
 #include <ncurses/curses.h>
+#include <windows.h>
+//fungsi untuk membersihkan dan refresh layar
+void clearScreen(){
+    clear();
+    refresh();
+}
 
 
 //ASCII karakter
@@ -1756,4 +1762,54 @@ void magicsframe() {
   napms(45);
   clear();
 
+}
+
+//tampilan pada menu login
+
+void boxMenu(){
+    mvprintw(9,30,"__||___________________________________________________||__");
+    mvprintw(10,30,"  ||                                                   ||  ");
+    mvprintw(11,30,"  ||               SELAMAT DATANG DI GAME              ||  ");
+    mvprintw(12,30,"  ||                THE MAGE OF DARKNESS               ||  ");
+    mvprintw(13,30,"  ||                                                   ||  ");
+    mvprintw(14,30,"  ||               ______________________              ||  ");
+    mvprintw(15,30,"  ||              ||                    ||             ||  ");
+    mvprintw(16,30,"  ||              ||     LOGIN          ||             ||  ");
+    mvprintw(17,30,"  ||              ||     BUAT AKUN      ||             ||  ");
+    mvprintw(18,30,"  ||              ||     KELUAR         ||             ||  ");
+    mvprintw(19,30,"  ||              ||____________________||             ||  ");
+    mvprintw(20,30,"__||___________________________________________________||__");
+    mvprintw(21,30,"  ||                 TEKAN 1, 2, ATAU 3                ||  ");
+}
+
+void boxSignUp(){
+    mvprintw(9,30,"__||___________________________________________________||__");
+    mvprintw(10,30,"  ||                                                   ||  ");
+    mvprintw(11,30,"  ||                      BUAT AKUN                    ||  ");
+    mvprintw(12,30,"  ||                                                   ||  ");
+    mvprintw(13,30,"  ||            Username :                             ||  ");
+    mvprintw(14,30,"  ||            (Username hanya berupa huruf)          ||  ");
+    mvprintw(15,30,"  ||                                                   ||  ");
+    mvprintw(16,30,"  ||            Password :                             ||  ");
+    mvprintw(17,30,"  ||            (Password hanya berupa angka)          ||  ");
+    mvprintw(18,30,"  ||                                                   ||  ");
+    mvprintw(19,30,"  ||                                                   ||  ");
+    mvprintw(20,30,"__||___________________________________________________||__");
+    mvprintw(21,30,"  ||                                                   ||  ");
+}
+
+void boxSignIn(){
+    mvprintw(9,30,"__||___________________________________________________||__");
+    mvprintw(10,30,"  ||                                                   ||  ");
+    mvprintw(11,30,"  ||                        LOGIN                      ||  ");
+    mvprintw(12,30,"  ||                                                   ||  ");
+    mvprintw(13,30,"  ||            Username :                             ||  ");
+    mvprintw(14,30,"  ||                                                   ||  ");
+    mvprintw(15,30,"  ||                                                   ||  ");
+    mvprintw(16,30,"  ||            Password :                             ||  ");
+    mvprintw(17,30,"  ||                                                   ||  ");
+    mvprintw(18,30,"  ||  (Pastikan username dan password sudah benar ya)  ||  ");
+    mvprintw(19,30,"  ||                                                   ||  ");
+    mvprintw(20,30,"__||___________________________________________________||__");
+    mvprintw(21,30,"  ||                                                   ||  ");
 }
