@@ -1764,6 +1764,23 @@ void magicsframe() {
 
 }
 
+//tampilan loading
+void loadingText(){
+    for(int i=0; i<3; i++){
+		
+		mvprintw(26, 14, "   L O A D I N G");
+		mvprintw(27, 14, "--------------------");
+		mvprintw(28, 14, "|                  |");
+		mvprintw(29, 14, "--------------------");
+		
+		for(int j=1; j<18; j++){
+			mvprintw(28, 14 + j, ">>");
+			refresh();
+			Sleep(100);
+		}
+	}
+}
+
 //tampilan pada menu login
 
 void boxMenu(){
