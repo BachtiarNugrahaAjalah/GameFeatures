@@ -1,11 +1,11 @@
-#include "animation.h"
 #include "stat.h"
 #include "dialog.h"
-#include <windows.h>
 #include <unistd.h>
 #include <iostream>
 #include <random>
 #include <fstream>
+#include <cstring>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -238,4 +238,59 @@ void battlesystem() {
     playerturn();
     randomattack();
   }
+}
+
+//login
+
+void singIn(){
+    boxSignIn();
+
+    char username[30], password[30];
+    mvprintw(13,57,"");
+    getnstr(&username[0], 30);
+    mvprintw(16,57,"");
+    getnstr(&password[0], 30);
+
+    ifstream akun;
+    string inputUsername, inputPassword;
+    akun.open("akunUser.txt");
+    bool approve = false;
+    while (akun >> inputUsername >> inputPassword)
+    {
+        if(inputUsername == username && inputPassword == password){
+            approve = true;
+            break;
+        }
+    }
+    akun.close();
+
+    if(approve){
+        clearScreen();
+        loadingText();
+        clearScreen();
+    }
+    else if(!approve){
+        clearScreen();
+        loadingText();
+        Sleep(100);
+        clearScreen();
+        mvprintw(7,36,"USERNAME ATAU PASSWORD YANG ANDA MASUKKAN SALAH");
+        singIn();
+
+    }
+}
+
+void singUp (){
+    boxSignUp();
+
+    ofstream akun;
+    char username[30];
+    char password[30];
+    mvprintw(13, 57, "");
+    getnstr(&username[0], 30);
+    mvprintw(16,57,"");
+    getnstr(&password[0], 30);
+    akun.open("akunUser.txt", ios::app);
+    akun << username << " " << password << endl;
+    akun.close();
 }
